@@ -1,3 +1,8 @@
 .content {
-    
+  grid-row: 4/5;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content);
+  grid-template-columns: minmax(min-content, 880px);
+  row-gap: 50px;
 }
