@@ -2,5 +2,30 @@
   background-color: #000;
   display: grid;
   grid-template-rows: 45px minmax(min-content, max-content) 40px minmax(min-content, max-content) 66px minmax(min-content, max-content) 60px;
-  grid-template-columns: 200px minmax(min-content, 880px) 200px;
+  grid-template-columns: calc((100vw - 880px)/2) minmax(min-content, 880px) calc((100vw - 880px)/2);
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    grid-template-columns: calc((100vw - 824px)/2) minmax(min-content, 824px) calc((100vw - 824px)/2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    grid-template-columns: calc((100vw - 672px)/2) minmax(min-content, 672px) calc((100vw - 672px)/2);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    grid-template-columns: 19px minmax(min-content, 282px) 19px;
+    grid-template-rows: 28px minmax(min-content, max-content) 42px minmax(min-content, max-content) 48px minmax(min-content, max-content) 36px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .page {
+    grid-template-columns: calc((100vw - 880px)/2) minmax(min-content, 880px) calc((100vw - 880px)/2);
+  }
 }

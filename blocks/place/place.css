@@ -4,3 +4,16 @@
   background-color: #fff;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+  .place {
+    max-width: 265px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .place {
+    max-width: 330px;
+    object-fit: cover;
+  }
+}

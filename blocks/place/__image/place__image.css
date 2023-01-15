@@ -1,4 +1,23 @@
 .place__image {
   max-width: 282px;
+  width: 100%;
   border-radius: 10px 10px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .place__image {
+    max-width: 265px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .place__image {
+    max-width: 330px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .place__image {
+    max-width: 282px;
+  }
 }

@@ -6,3 +6,22 @@
   grid-template-columns: minmax(min-content, 880px);
   row-gap: 50px;
 }
+
+@media screen and (max-width: 1024px) {
+  .content {
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content {
+    grid-template-columns: minmax(min-content, 282px);
+    row-gap: 36px;
+  }
+}

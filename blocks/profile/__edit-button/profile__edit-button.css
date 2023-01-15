@@ -12,3 +12,11 @@
   grid-row: 1;
   grid-column: 2;
 }
+
+@media screen and (max-width: 320px) {
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+  }
+}
