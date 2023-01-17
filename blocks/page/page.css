@@ -7,19 +7,26 @@
 
 @media screen and (max-width: 1024px) {
   .page {
-    grid-template-columns: calc((100vw - 824px)/2) minmax(min-content, 824px) calc((100vw - 824px)/2);
+    grid-template-columns: 100px minmax(min-content, 824px) 100px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .page {
-    grid-template-columns: calc((100vw - 672px)/2) minmax(min-content, 672px) calc((100vw - 672px)/2);
+    grid-template-columns: 48px minmax(min-content, 672px) 48px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .page {
+    grid-template-columns: 30px minmax(min-content, calc(100vw - 60px)) 30px;
+    grid-template-rows: 28px minmax(min-content, max-content) 42px minmax(min-content, max-content) 48px minmax(min-content, max-content) 36px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .page {
-    grid-template-columns: 19px minmax(min-content, 282px) 19px;
+    grid-template-columns: 19px minmax(min-content, calc(100vw - 38px)) 19px;
     grid-template-rows: 28px minmax(min-content, max-content) 42px minmax(min-content, max-content) 48px minmax(min-content, max-content) 36px;
   }
 }

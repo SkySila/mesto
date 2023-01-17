@@ -18,9 +18,20 @@
   }
 }
 
+@media screen and (max-width: 665px) {
+  .profile {
+    max-width: 569px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile {
+    max-width: 490px;
+}
+
 @media screen and (max-width: 320px) {
   .profile {
     max-width: 282px;
-    flex-direction: column;
   }
 }

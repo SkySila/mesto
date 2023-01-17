@@ -19,6 +19,13 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .content {
+    grid-template-columns: minmax(min-content, calc(100vw - 38px));
+    row-gap: 40px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .content {
     grid-template-columns: minmax(min-content, 282px);

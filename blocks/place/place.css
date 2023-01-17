@@ -11,9 +11,20 @@
   }
 }
 
+@media screen and (max-width: 895px) {
+  .place {
+    max-width: 341.5px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .place {
     max-width: 330px;
-    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .place {
+    max-width: 550px;
   }
 }

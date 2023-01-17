@@ -3,10 +3,22 @@
   align-items: center;
 }
 
+@media screen and (max-width: 585px) {
+  .profile__container {
+    max-width: 489px;
+    flex-direction: column;
+    margin-bottom: 36px;
+  }  
+}
+
+@media screen and (max-width: 550px) {
+  .profile__container {
+    max-width: 490px;
+  }  
+}
+
 @media screen and (max-width: 320px) {
   .profile__container {
     max-width: 282px;
-    flex-direction: column;
-    margin-bottom: 36px;
   }  
 }

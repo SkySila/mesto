@@ -13,10 +13,15 @@
   -webkit-font-smoothing: antialiased;
 }
 
+@media screen and (max-width: 585px) {
+  .profile__info-subheading {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__info-subheading {
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
   }
 }

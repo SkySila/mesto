@@ -15,6 +15,27 @@
   grid-column: 1;
 }
 
+@media screen and (max-width: 825px) {
+  .profile__info-heading {
+    font-size: 37px;
+    line-height: 43px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .profile__info-heading {
+    font-size: 35px;
+    line-height: 41px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .profile__info-heading {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__info-heading {
     font-size: 27px;

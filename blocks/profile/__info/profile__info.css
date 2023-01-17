@@ -8,10 +8,16 @@
   align-items: baseline;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 585px) {
   .profile__info {
-    max-width: 282px;
+    max-width: 489px;
     row-gap: 14px;
     column-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__info {
+    max-width: 490px;
   }
 }
