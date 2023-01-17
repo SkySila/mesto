@@ -10,8 +10,12 @@
   background-position: center;
   background-color: #000;
   border: 2px solid #fff;
+  opacity: 1;
 }
 
+.profile__add-button:hover {
+  opacity: 0.6;
+}
 @media screen and (max-width: 865px) {
   .profile__add-button {
     max-width: 125px;
