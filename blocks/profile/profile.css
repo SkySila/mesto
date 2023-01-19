@@ -28,6 +28,7 @@
 @media screen and (max-width: 550px) {
   .profile {
     max-width: 490px;
+  }
 }
 
 @media screen and (max-width: 320px) {
