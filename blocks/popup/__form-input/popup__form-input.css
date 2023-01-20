@@ -6,6 +6,13 @@
   margin-bottom: 30px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  text-align: left;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
 }
 
 .popup__form-input:last-of-type {
