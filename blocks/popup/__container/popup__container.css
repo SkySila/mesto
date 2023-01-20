@@ -10,3 +10,15 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+@media screen and (max-width: 490px) {
+  .popup__container {
+    max-width: calc((100vw - 60px));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__container {
+    max-width: 282px;
+  }
+}

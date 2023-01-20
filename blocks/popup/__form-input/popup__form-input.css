@@ -11,3 +11,15 @@
 .popup__form-input:last-of-type {
   margin: 0;
 }
+
+@media screen and (max-width: 450px) {
+  .popup__form-input {
+    max-width: calc(100% - 44px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__form-input {
+    max-width: 238px;
+  }
+}

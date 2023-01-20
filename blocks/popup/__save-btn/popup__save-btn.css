@@ -22,3 +22,20 @@
 .popup__save-btn:hover {
   opacity: 0.8;
 }
+
+@media screen and (max-width: 450px) {
+  .popup__save-btn {
+    max-width: calc(100% - 44px);
+    min-height: 48px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__save-btn {
+    max-width: 238px;
+    min-height: 46px;
+  }
+}

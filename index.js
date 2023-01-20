@@ -34,6 +34,7 @@ function handleFormSubmit (evt) {
 
   nameElement.textContent = nameInput.value;
   jobElement.textContent = jobInput.value;
+  popupElement.classList.toggle("popup_opened");
 }
 
 formElement.addEventListener('submit', handleFormSubmit);

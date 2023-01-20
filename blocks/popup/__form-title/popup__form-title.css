@@ -14,3 +14,46 @@
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
 }
+
+@media screen and (max-width: 490px) {
+  .popup__form-title {
+    max-width: 358px;
+    width: 100%;
+    font-size: 22px;
+    line-height: 27px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .popup__form-title {
+    max-width: calc(100% - 44px);
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 27px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 65px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .popup__form-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__form-title {
+    max-width: 238px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 25px;
+    margin-left: 22px;
+    margin-bottom: 75px;
+  }
+}

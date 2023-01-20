@@ -12,79 +12,79 @@
     <header class="header">
       <div class="header__logo"></div>
     </header>
-  <main class="content">
-    <section class="profile">
-      <div class="profile__container">
-        <img class="profile__avatar" src="images/avatar.png" alt="Фото Жак-Ива Кусто">
-        <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__job">Исследователь океана</p>
-          <button type ="button" class="profile__edit-btn"></button>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__container">
+          <img class="profile__avatar" src="images/avatar.png" alt="Фото Жак-Ива Кусто">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <p class="profile__job">Исследователь океана</p>
+            <button type ="button" class="profile__edit-btn"></button>
+          </div>
         </div>
-      </div>
-      <button type="button" class="profile__add-button"></button>
-    </section>
-    <section class="places">
-      <article class="place">
-        <img class="place__image" src="/images/image-1.jpg" alt="Старое каменное здание на фоне лесного массива в Карачаевске">
-        <div class="place__name-line">
-          <p class="place__name">Карачаевск</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-      <article class="place">
-        <img class="place__image" src="/images/image-2.png" alt="Гора Эльбрус">
-        <div class="place__name-line">
-          <p class="place__name">Гора Эльбрус</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-      <article class="place">
-        <img class="place__image" src="/images/image-3.png" alt="Гора в посёлке Домбай">
-        <div class="place__name-line">
-          <p class="place__name">Домбай</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-      <article class="place">
-        <img class="place__image" src="/images/image-4.png" alt="Гора Эльбрус">
-        <div class="place__name-line">
-          <p class="place__name">Гора Эльбрус</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-      <article class="place">
-        <img class="place__image" src="./images/image-5.png" alt="Гора в посёлке Домбай">
-        <div class="place__name-line">
-          <p class="place__name">Домбай</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-      <article class="place">
-        <img class="place__image" src="./images/image-6.png" alt="Старое каменное здание на фоне лесного массива в Карачаевске">
-        <div class="place__name-line">
-          <p class="place__name">Карачаево-Черкесия</p>
-          <div class="place__like"></div>
-        </div>
-      </article>
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__text">&copy; 2023 Mesto Russia</p>
-  </footer>
-  <div class="popup">
-      <form class="popup__container">
-        <h2 class="popup__form-title">Редактировать профиль</h2>
-        <fieldset class="popup__form-inputs">
-          <input class="popup__form-input popup__form-input_name">
-          <input class="popup__form-input popup__form-input_job">
-        </fieldset>
-        <button type="submit" class="popup__save-btn">Сохранить</button>
-        <button type="button" class="popup__close-btn"></button>
-      </form>
-    <div class="popup__overlay"></div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+      <section class="places">
+        <article class="place">
+          <img class="place__image" src="/images/image-1.jpg" alt="Старое каменное здание на фоне лесного массива в Карачаевске">
+          <div class="place__name-line">
+            <p class="place__name">Карачаевск</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+        <article class="place">
+          <img class="place__image" src="/images/image-2.png" alt="Гора Эльбрус">
+          <div class="place__name-line">
+            <p class="place__name">Гора Эльбрус</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+        <article class="place">
+          <img class="place__image" src="/images/image-3.png" alt="Гора в посёлке Домбай">
+          <div class="place__name-line">
+            <p class="place__name">Домбай</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+        <article class="place">
+          <img class="place__image" src="/images/image-4.png" alt="Гора Эльбрус">
+          <div class="place__name-line">
+            <p class="place__name">Гора Эльбрус</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+        <article class="place">
+          <img class="place__image" src="./images/image-5.png" alt="Гора в посёлке Домбай">
+          <div class="place__name-line">
+            <p class="place__name">Домбай</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+        <article class="place">
+          <img class="place__image" src="./images/image-6.png" alt="Старое каменное здание на фоне лесного массива в Карачаевске">
+          <div class="place__name-line">
+            <p class="place__name">Карачаево-Черкесия</p>
+            <div class="place__like"></div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2023 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <form class="popup__container">
+          <h2 class="popup__form-title">Редактировать профиль</h2>
+          <fieldset class="popup__form-inputs">
+            <input type="text" class="popup__form-input popup__form-input_name">
+            <input type="text" class="popup__form-input popup__form-input_job">
+          </fieldset>
+          <button type="submit" class="popup__save-btn">Сохранить</button>
+          <button type="button" class="popup__close-btn"></button>
+        </form>
+      <div class="popup__overlay"></div>
+    </div>
   </div>
-  </div>
-  <script src="./script.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>

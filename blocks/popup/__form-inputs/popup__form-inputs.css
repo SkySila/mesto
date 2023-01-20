@@ -17,3 +17,10 @@
   max-width: 430px;
   width: 100%;
 }
+
+@media screen and (max-width: 320px) {
+  .popup__form-inputs {
+    max-width: 282px;
+    margin-bottom: 45px;
+  }
+}
