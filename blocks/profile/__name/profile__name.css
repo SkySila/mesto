@@ -1,4 +1,4 @@
-.profile__info-heading {
+.profile__name {
   margin: 0;
   padding: 0;
   margin-block-start: 0;
@@ -16,21 +16,21 @@
 }
 
 @media screen and (max-width: 825px) {
-  .profile__info-heading {
+  .profile__name {
     font-size: 37px;
     line-height: 43px;
   }
 }
 
 @media screen and (max-width: 585px) {
-  .profile__info-heading {
+  .profile__name {
     font-size: 35px;
     line-height: 41px;
   }
 }
 
 @media screen and (max-width: 340px) {
-  .profile__info-heading {
+  .profile__name {
     font-size: 30px;
     line-height: 36px;
   }
