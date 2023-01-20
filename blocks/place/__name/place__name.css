@@ -12,4 +12,7 @@
   text-align: left;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
