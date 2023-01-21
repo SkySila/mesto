@@ -1,0 +1,10 @@
+.place__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.place__image-wrapper::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
