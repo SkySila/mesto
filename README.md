@@ -13,5 +13,6 @@
 Адаптивная вёрстка, Grid/Flex Layout, DOM JS, BEM. 
 
 **Ссылка на GitHub Pages**
+https://skysila.github.io/mesto/
 
 
