@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="pages/index.css"> 
     <title>Место</title>
 </head>
-<body>
-  <div class="page">
+<body class="page">
     <header class="header">
       <div class="header__logo"></div>
     </header>
@@ -30,8 +29,8 @@
             <img class="place__image" src="./images/image-1.jpg" alt="Деревья и поляна перед горой Эль-Капитан, Калифорния">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Эль-Капитан</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Эль-Капитан</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
         <article class="place">
@@ -39,8 +38,8 @@
             <img class="place__image" src="./images/image-2.jpg" alt="Яркое солнце на лесом с холмами, Усти-над-Лабем, Чехия">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Усти-над-Лабем</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Усти-над-Лабем</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
         <article class="place">
@@ -48,8 +47,8 @@
             <img class="place__image" src="./images/image-3.jpg" alt="Озеро Пейто, лазурного цвета под горой в лесной местности, Канада">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Озеро Пейто</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Озеро Пейто</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
         <article class="place">
@@ -57,8 +56,8 @@
             <img class="place__image" src="./images/image-4.jpg" alt="Невысокий водопад Фаллох, немного деревьев и небо на фоне, Шотландия">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Водопад Фаллох</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Водопад Фаллох</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
         <article class="place">
@@ -66,8 +65,8 @@
             <img class="place__image" src="./images/image-5.jpg" alt="Вид из окна на озеро Брайес с лодками, Италия">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Озеро Брайес</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Озеро Брайес</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
         <article class="place">
@@ -75,8 +74,8 @@
             <img class="place__image" src="./images/image-6.jpg" alt="Прямая мощёная дорога в лесу со ступеньками, холмы Нанди, Индия">
           </div>
           <div class="place__name-line">
-            <p class="place__name">Холмы Нанди</p>
-            <div class="place__like"></div>
+            <h2 class="place__name">Холмы Нанди</h2>
+            <button type="button" class="place__like"></button>
           </div>
         </article>
       </section>
@@ -85,8 +84,8 @@
       <p class="footer__text">&copy; 2023 Mesto Russia</p>
     </footer>
     <div class="popup">
-        <form class="popup__container">
-          <h2 class="popup__form-title">Редактировать профиль</h2>
+        <form class="popup__form">
+          <h3 class="popup__form-title">Редактировать профиль</h3>
           <fieldset class="popup__form-inputs">
             <input type="text" class="popup__form-input popup__form-input_name">
             <input type="text" class="popup__form-input popup__form-input_job">
@@ -96,7 +95,6 @@
         </form>
       <div class="popup__overlay"></div>
     </div>
-  </div>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
