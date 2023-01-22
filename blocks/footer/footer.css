@@ -1,8 +1,27 @@
 .footer {
-  max-width: 318px;
+  max-width: 880px;
   width: 100%;
-  grid-row: 6/7;
-  grid-column: 2/3;
+  grid-row: 3;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    max-width: 824px;
+    width: calc((824/1024) * 100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    max-width: 672px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    max-width: 490px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 320px) {

@@ -2,33 +2,36 @@
   max-width: 880px;
   width: 100%;
   min-height: 74px;
-  grid-row: 2/3;
-  grid-column: 2/3;
+  box-sizing: border-box;
+  grid-row: 1;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7); /*equivalent of #545454*/
 }
 
 @media screen and (max-width: 1024px) {
   .header {
     max-width: 824px;
+    width: calc((824/1024) * 100%);
   }
 }
 
 @media screen and (max-width: 768px) {
   .header {
     max-width: 672px;
+    min-height: 65px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .header {
-    max-width: calc((100vw - 38px));
-    grid-column: 2/3;
+    max-width: 490px;
+    width: 100%;
+    min-height: 60px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;
-    grid-column: 1/-1;
+    min-height: 56px;
   }
 }

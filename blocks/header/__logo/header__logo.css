@@ -5,11 +5,10 @@
   background-size: cover;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 550px) {
   .header__logo {
     max-width: 125px;
     min-height: 29.05px;
-    margin-left: 10px;
   }
 }
 
