@@ -25,7 +25,6 @@
 /*places*/
 @import url(../blocks/places/places.css);
 @import url(../blocks/place/place.css);
-@import url(../blocks/place/__image-wrapper/place__image-wrapper.css);
 @import url(../blocks/place/__image/place__image.css);
 @import url(../blocks/place/__name-line/place__name-line.css);
 @import url(../blocks/place/__name/place__name.css);
