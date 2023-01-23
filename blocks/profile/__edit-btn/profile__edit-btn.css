@@ -9,13 +9,33 @@
   background-position: center;
   background-color: #000;
   border: 1px solid #fff;
-  grid-row: 1;
-  grid-column: 2;
+  box-sizing: border-box;
   opacity: 1;
+  position: absolute;
+  right: -42px;
+  top: 12px;
 }
 
 .profile__edit-btn:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__edit-btn {
+    width: 22px;
+    height: 22px;
+    background-size: 9px 9px;
+    right: -38px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__edit-btn {
+    width: 20px;
+    height: 20px;
+    background-size: 8.5px 8.5px;
+    top: 11px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -23,5 +43,7 @@
     width: 18px;
     height: 18px;
     background-size: 7.5px 7.5px;
+    right: -28px;
+    top: 8px;
   }
 }

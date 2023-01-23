@@ -3,25 +3,36 @@
   padding: 0;
   margin-block-start: 0;
   margin-block-end: 0;
+  max-width: 336px;
   color: #fff;
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 18px;
   font-weight: 400;
   text-align: left;
   vertical-align: top;
   -webkit-font-smoothing: antialiased;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 585px) {
+@media screen and (max-width: 768px) {
   .profile__job {
     text-align: center;
+    max-width: 672px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__job {
+    max-width: 490px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .profile__job {
+    max-width: 282px;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 14px;
   }
 }
