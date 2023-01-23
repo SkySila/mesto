@@ -3,28 +3,13 @@
   width: 100%;
   background-color: #fff;
   border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 1024px) {
   .place {
-    max-width: 265px;
-  }
-}
-
-@media screen and (max-width: 895px) {
-  .place {
-    max-width: 341.5px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .place {
-    max-width: 330px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .place {
-    max-width: 490px;
+    max-width: none;
   }
 }

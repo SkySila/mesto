@@ -7,8 +7,3 @@
     margin-top: 42px;
   }
 }
-
-@media screen and (max-width: 320px) {
-  .page__content {
-  }
-}

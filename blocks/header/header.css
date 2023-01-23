@@ -24,7 +24,6 @@
 @media screen and (max-width: 550px) {
   .header {
     max-width: 490px;
-    width: 100%;
     min-height: 60px;
   }
 }
@@ -32,6 +31,7 @@
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;
+    width: 100%;
     min-height: 56px;
   }
 }

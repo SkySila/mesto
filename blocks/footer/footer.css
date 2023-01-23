@@ -20,12 +20,12 @@
 @media screen and (max-width: 550px) {
   .footer {
     max-width: 490px;
-    width: 100%;
   }
 }
 
 @media screen and (max-width: 320px) {
   .footer {
     max-width: 282px;
+    width: 100%;
   }
 }

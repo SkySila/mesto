@@ -2,6 +2,17 @@
   display: flex;
   align-items: baseline;
   justify-content: space-around;
+  box-sizing: border-box;
   width: 100%;
-  min-height: 80px;
+  min-height: 79px;
+  flex-basis: 79px;
+  padding-top: 25px;
+  padding-bottom: 31px;
+}
+
+@media screen and (max-width: 320px) {
+  .place__name-line {
+    min-height: 80px;
+    flex-basis: 80px;
+  } 
 }
