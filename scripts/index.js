@@ -36,9 +36,7 @@ editElement.addEventListener ('click', function () {
 });
 
 /*закрытие всплывающего окна*/
-closeElement.addEventListener('click', function () {
-  togglePopupWindow();
-});
+closeElement.addEventListener('click', togglePopupWindow);
 
 /*редактирование имени и работы*/ 
 formElement.addEventListener('submit', handleFormSubmit);
