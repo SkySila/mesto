@@ -2,6 +2,7 @@
   max-width: 880px;
   width: 100%;
   grid-row: 3;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 1024px) {
