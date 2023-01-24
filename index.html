@@ -71,18 +71,19 @@
     <footer class="footer page__footer">
       <p class="footer__text">&copy; 2023 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <section class="popup">
+      <div class="popup__container">
         <form class="popup__form">
           <h3 class="popup__form-title">Редактировать профиль</h3>
           <fieldset class="popup__form-inputs">
-            <input type="text" class="popup__form-input popup__form-input_name">
-            <input type="text" class="popup__form-input popup__form-input_job">
+            <input type="text" placeholder = "Введите имя" name="profileName" class="popup__form-input" required>
+            <input type="text" placeholder = "Введите работу" name="profileJob" class="popup__form-input" required>
           </fieldset>
           <button type="submit" class="popup__save-btn" aria-label="Сохранить">Сохранить</button>
           <button type="button" class="popup__close-btn" aria-label="Закрыть"></button>
         </form>
-      <div class="popup__overlay"></div>
-    </div>
+      </div>
+    </section>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

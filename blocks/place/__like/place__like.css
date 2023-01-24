@@ -8,6 +8,8 @@
   height: 19px;
   display: inline-block;
   opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.5s;
 }
 
 .place__like:hover {

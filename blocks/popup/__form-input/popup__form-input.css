@@ -1,10 +1,10 @@
 .popup__form-input {
   padding: 0;
-  max-width: 358px;
+  border: 0;
   width: 100%;
   min-height: 27px;
+  box-sizing: border-box;
   margin-bottom: 30px;
-  border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
   font-size: 14px;
@@ -16,17 +16,5 @@
 }
 
 .popup__form-input:last-of-type {
-  margin: 0;
-}
-
-@media screen and (max-width: 450px) {
-  .popup__form-input {
-    max-width: calc(100% - 44px);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .popup__form-input {
-    max-width: 238px;
-  }
+  margin-bottom: 0;
 }

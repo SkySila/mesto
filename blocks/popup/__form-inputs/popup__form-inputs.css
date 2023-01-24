@@ -7,20 +7,13 @@
   padding-block-end: 0;
   padding-inline-start: 0;
   padding-inline-end: 0;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 48px;
   border: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 430px;
   width: 100%;
 }
 
 @media screen and (max-width: 320px) {
   .popup__form-inputs {
-    max-width: 282px;
     margin-bottom: 45px;
   }
 }
