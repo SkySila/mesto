@@ -44,8 +44,8 @@ let jobInput = formElement.querySelector('[name="profileJob"]');
 let nameElement = profileElement.querySelector('.profile__name');
 let jobElement = profileElement.querySelector('.profile__job');
 
-function togglePopupWindow () {
-  popupElement.classList.toggle('popup_opened');
+function togglePopupWindow (popupItem) {
+  popupItem.classList.toggle('popup_opened');
 }
 
 function handleFormSubmit (evt) {
@@ -53,7 +53,7 @@ function handleFormSubmit (evt) {
 
   nameElement.textContent = nameInput.value;
   jobElement.textContent = jobInput.value;
-  togglePopupWindow();
+  togglePopupWindow(popupElement);
 }
 
 function addCardsInitial () {
@@ -76,19 +76,28 @@ addCardsInitial();
 
 /*открытие всплывающего окна*/
 editBtnElement.addEventListener ('click', function () {
-  togglePopupWindow();
+  togglePopupWindow(popupElement);
   nameInput.value = nameElement.textContent;
   jobInput.value = jobElement.textContent;
 });
 
 /*закрытие всплывающего окна*/
-closeBtnElement.addEventListener('click', togglePopupWindow);
+closeBtnElement.addEventListener('click', function () {
+  togglePopupWindow(popupElement);
+});
 
 /*редактирование имени и работы*/ 
 formElement.addEventListener('submit', handleFormSubmit);
 
+const popupPlaceElement = document.querySelector('#popupPlace');
 addBtnElement.addEventListener('click', function () {
-  
+  togglePopupWindow(popupPlaceElement);
+});
+
+const closeBtnPlaceElement = popupPlaceElement.querySelector('.popup__close-btn');
+
+closeBtnPlaceElement.addEventListener('click', function() {
+  togglePopupWindow(popupPlaceElement);
 });
 
 
