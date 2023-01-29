@@ -21,51 +21,9 @@
             <button type ="button" class="profile__edit-btn" aria-label="Редактировать"></button>
           </div>
         </div>
-        <button type="button" class="profile__add-button" aria-label="Добавить"></button>
+        <button type="button" class="profile__add-btn" aria-label="Добавить"></button>
       </section>
       <section class="places">
-        <article class="place">
-          <img class="place__image" src="./images/image-1.jpg" alt="Деревья и поляна перед горой Эль-Капитан, Калифорния">
-          <div class="place__name-line">
-            <h2 class="place__name">Эль-Капитан</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/image-2.jpg" alt="Яркое солнце на лесом с холмами, Усти-над-Лабем, Чехия">
-          <div class="place__name-line">
-            <h2 class="place__name">Усти-над-Лабем</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/image-3.jpg" alt="Озеро Пейто, лазурного цвета под горой в лесной местности, Канада">
-          <div class="place__name-line">
-            <h2 class="place__name">Озеро Пейто</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/image-4.jpg" alt="Невысокий водопад Фаллох, немного деревьев и небо на фоне, Шотландия">
-          <div class="place__name-line">
-            <h2 class="place__name">Водопад Фаллох</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/image-5.jpg" alt="Вид из окна на озеро Брайес с лодками, Италия">
-          <div class="place__name-line">
-            <h2 class="place__name">Озеро Брайес</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="./images/image-6.jpg" alt="Прямая мощёная дорога в лесу со ступеньками, холмы Нанди, Индия">
-          <div class="place__name-line">
-            <h2 class="place__name">Холмы Нанди</h2>
-            <button type="button" class="place__like" aria-label="Нравится"></button>
-          </div>
-        </article>
       </section>
     </main>
     <footer class="footer page__footer">
@@ -84,6 +42,15 @@
         <button type="button" class="popup__close-btn" aria-label="Закрыть"></button>
       </div>
     </section>
+    <template id ="place-template">
+      <article class="place">
+        <img class="place__image" src="" alt="">
+        <div class="place__name-line">
+          <h2 class="place__name"></h2>
+          <button type="button" class="place__like" aria-label="Нравится"></button>
+        </div>
+      </article>
+    </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

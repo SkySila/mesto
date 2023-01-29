@@ -24,7 +24,7 @@
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__job/profile__job.css);
 @import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
-@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__add-btn/profile__add-btn.css);
 
 /*places*/
 @import url(../blocks/places/places.css);
