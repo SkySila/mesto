@@ -7,7 +7,6 @@ const profileForm = popupProfile.querySelector('.popup__form');
 const popupPlace = document.querySelector('#popupPlace');
 const placesElement = document.querySelector('.places');
 const templateElement = document.querySelector('#place-template').content.querySelector('.place');
-const likeBtn = document.querySelectorAll('.place__like');
 const closePlaceBtn = popupPlace.querySelector('.popup__close-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
 const placeForm = popupPlace.querySelector('.popup__form');
@@ -86,13 +85,15 @@ function addNewPlace(name, link) {
   placesElement.prepend(newPlace);
 }
 
-/*окрашивание лайков*/
+addPlacesInitial();
+
+/*окрашивание лайков и удаление карточек*/
 placesElement.addEventListener('click', function(event) {
   if(event.target.classList.contains('place__like')) 
     event.target.classList.toggle('place__like_active');
+  else if(event.target.classList.contains('place__delete-btn'))
+    event.target.parentElement.remove();
 });
-
-addPlacesInitial();
 
 /*открытие всплывающего окна редактирования*/
 editProfileBtn.addEventListener ('click', function () {
@@ -109,7 +110,7 @@ closeProfileBtn.addEventListener('click', function () {
 /*сохранение имени и работы*/ 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
-
+/*добавление нового места*/
 addPlaceBtn.addEventListener('click', function () {
   togglePopupWindow(popupPlace);
 });
