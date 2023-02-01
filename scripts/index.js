@@ -81,6 +81,10 @@ function handlePlaceFormSubmit (evt) {
   togglePopupWindow(popupPlace);
 }
 
+function openImagePopup(image) {
+  console.log(image);
+};
+
 addInitialPlaces();
 
 /*окрашивание лайков и удаление карточек*/
@@ -89,6 +93,8 @@ placesElement.addEventListener('click', function(event) {
     event.target.classList.toggle('place__like_active');
   else if(event.target.classList.contains('place__delete-btn'))
     event.target.parentElement.remove();
+  else if (event.target.classList.contains('place__image'))
+    openImagePopup(event.target);
 });
 
 /*открытие всплывающего окна редактирования*/
