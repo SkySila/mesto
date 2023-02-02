@@ -115,6 +115,7 @@ closeProfileBtn.addEventListener('click', function () {
   togglePopupWindow(popupProfile);
 });
 
+
 /*сохранение имени и работы*/ 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
