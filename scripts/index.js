@@ -57,16 +57,6 @@ function handleProfileFormSubmit (evt) {
   profileJobElement.textContent = profileJobInput.value;
   togglePopupWindow(popupProfile);
 }
-/*
-function addImagePopup (placeName, placeLink) {
-  const newPopupCopy = imagePopupTemplateElement.cloneNode(true);
-  newPopupCopy.querySelector('.popup__image').src = placeLink;
-  newPopupCopy.querySelector('.popup__image-name').textContent = placeName;
-  newPopupCopy.querySelector('.popup__close-btn').addEventListener('click', function () {
-    togglePopupWindow(newPopupCopy);
-  });
-  return newPopupCopy;
-}*/
 
 function copyPlaceNameAndLink (placeName, placeLink) {
   const newPlaceDeepCopy = {place: cardTemplateElement.cloneNode(true), imagePopup: imagePopupTemplateElement.cloneNode(true)};
@@ -110,14 +100,6 @@ function handlePlaceFormSubmit (evt) {
   addNewPlace(placeNameInput.value, placeImageSrcInput.value);
   togglePopupWindow(popupPlace);
 }
-/*
-function openImagePopup(imageSource) {
-  const imagePopups = pageElement.querySelectorAll('.popup_type_image');
-  imagePopups.forEach((imagePopup) => {
-    if(imagePopup.querySelector('.popup__image').src == imageSource)
-      togglePopupWindow(imagePopup);
-  });
-};*/
 
 addInitialPlaces();
 
@@ -136,15 +118,17 @@ closeProfileBtn.addEventListener('click', function () {
 /*сохранение имени и работы*/ 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
-/*добавление нового места*/
+/*открытие всплывающего окна для добавления нового места*/
 addPlaceBtn.addEventListener('click', function () {
   togglePopupWindow(popupPlace);
 });
 
+/*закрытие всплывающего окна для добавления нового места*/
 closePlaceBtn.addEventListener('click', function() {
   togglePopupWindow(popupPlace);
 });
 
+/*добавление нового места*/
 placeForm.addEventListener('submit', handlePlaceFormSubmit);
 
 
