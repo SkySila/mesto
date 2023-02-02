@@ -6,10 +6,12 @@ const profileForm = popupProfile.querySelector('.popup__form');
 
 const popupPlace = document.querySelector('#popupPlace');
 const placesElement = document.querySelector('.places');
-const templateElement = document.querySelector('#place-template').content.querySelector('.place');
+const cardTemplateElement = document.querySelector('#place-template').content.querySelector('.place');
 const closePlaceBtn = popupPlace.querySelector('.popup__close-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
 const placeForm = popupPlace.querySelector('.popup__form');
+const imagePopupTemplateElement = document.querySelector('#image-template').content.querySelector('.popup_type_image');
+const pageElement = document.querySelector('.page');
 const initialPlaces = [
   {
     name: 'Эль-Капитан',
@@ -55,24 +57,52 @@ function handleProfileFormSubmit (evt) {
   profileJobElement.textContent = profileJobInput.value;
   togglePopupWindow(popupProfile);
 }
+/*
+function addImagePopup (placeName, placeLink) {
+  const newPopupCopy = imagePopupTemplateElement.cloneNode(true);
+  newPopupCopy.querySelector('.popup__image').src = placeLink;
+  newPopupCopy.querySelector('.popup__image-name').textContent = placeName;
+  newPopupCopy.querySelector('.popup__close-btn').addEventListener('click', function () {
+    togglePopupWindow(newPopupCopy);
+  });
+  return newPopupCopy;
+}*/
 
 function copyPlaceNameAndLink (placeName, placeLink) {
-  const newPlaceDeepCopy = templateElement.cloneNode(true);
-  newPlaceDeepCopy.querySelector('.place__name').textContent = placeName;
-  newPlaceDeepCopy.querySelector('.place__image').src = placeLink;
+  const newPlaceDeepCopy = {place: cardTemplateElement.cloneNode(true), imagePopup: imagePopupTemplateElement.cloneNode(true)};
+  newPlaceDeepCopy.place.querySelector('.place__name').textContent = placeName;
+  newPlaceDeepCopy.place.querySelector('.place__image').src = placeLink;
+  newPlaceDeepCopy.place.querySelector('.place__like').addEventListener('click', function (event) {
+    event.target.classList.toggle('place__like_active');
+  });
+  newPlaceDeepCopy.place.querySelector('.place__delete-btn').addEventListener('click', function (event) {
+    event.target.parentElement.remove();
+  });
+
+  newPlaceDeepCopy.imagePopup.querySelector('.popup__image').src = placeLink;
+  newPlaceDeepCopy.imagePopup.querySelector('.popup__image-name').textContent = placeName;
+  newPlaceDeepCopy.place.querySelector('.place__image').addEventListener('click', function () {
+    togglePopupWindow(newPlaceDeepCopy.imagePopup);
+  });
+  newPlaceDeepCopy.imagePopup.querySelector('.popup__close-btn').addEventListener('click', function () {
+    togglePopupWindow(newPlaceDeepCopy.imagePopup);
+  });
+
   return newPlaceDeepCopy;
 }
 
 function addInitialPlaces () {
   initialPlaces.forEach((item) => {
-    const newPlace = copyPlaceNameAndLink(item.name, item.link);
-    placesElement.append(newPlace);
+    const newPlaceAndPopup = copyPlaceNameAndLink(item.name, item.link);
+    placesElement.append(newPlaceAndPopup.place);
+    pageElement.append(newPlaceAndPopup.imagePopup);
   });
 }
 
 function addNewPlace(name, link) {
-  const newPlace = copyPlaceNameAndLink(name, link);
-  placesElement.prepend(newPlace);
+  const newPlaceAndPopup = copyPlaceNameAndLink(name, link);
+  placesElement.prepend(newPlaceAndPopup.place);
+  pageElement.append(newPlaceAndPopup.imagePopup);
 }
 
 function handlePlaceFormSubmit (evt) {
@@ -80,22 +110,16 @@ function handlePlaceFormSubmit (evt) {
   addNewPlace(placeNameInput.value, placeImageSrcInput.value);
   togglePopupWindow(popupPlace);
 }
-
-function openImagePopup(image) {
-  console.log(image);
-};
+/*
+function openImagePopup(imageSource) {
+  const imagePopups = pageElement.querySelectorAll('.popup_type_image');
+  imagePopups.forEach((imagePopup) => {
+    if(imagePopup.querySelector('.popup__image').src == imageSource)
+      togglePopupWindow(imagePopup);
+  });
+};*/
 
 addInitialPlaces();
-
-/*окрашивание лайков и удаление карточек*/
-placesElement.addEventListener('click', function(event) {
-  if(event.target.classList.contains('place__like')) 
-    event.target.classList.toggle('place__like_active');
-  else if(event.target.classList.contains('place__delete-btn'))
-    event.target.parentElement.remove();
-  else if (event.target.classList.contains('place__image'))
-    openImagePopup(event.target);
-});
 
 /*открытие всплывающего окна редактирования*/
 editProfileBtn.addEventListener ('click', function () {
