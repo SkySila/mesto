@@ -10,7 +10,7 @@ const cardTemplateElement = document.querySelector('#place-template').content.qu
 const closePlaceBtn = popupPlace.querySelector('.popup__close-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
 const placeForm = popupPlace.querySelector('.popup__form');
-const imagePopupTemplateElement = document.querySelector('#image-template').content.querySelector('.popup_type_image');
+const imagePopupElement = document.querySelector('.popup_type_image');
 const pageElement = document.querySelector('.page');
 const initialPlaces = [
   {
@@ -59,7 +59,7 @@ function handleProfileFormSubmit (evt) {
 }
 
 function copyPlaceNameAndLink (placeName, placeLink) {
-  const newPlaceDeepCopy = {place: cardTemplateElement.cloneNode(true), imagePopup: imagePopupTemplateElement.cloneNode(true)};
+  const newPlaceDeepCopy = {place: cardTemplateElement.cloneNode(true), imagePopup: imagePopupElement.cloneNode(true)};
   newPlaceDeepCopy.place.querySelector('.place__name').textContent = placeName;
   newPlaceDeepCopy.place.querySelector('.place__image').src = placeLink;
   newPlaceDeepCopy.place.querySelector('.place__like').addEventListener('click', function (event) {
