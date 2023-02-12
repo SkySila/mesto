@@ -1,4 +1,4 @@
-.popup__form-inputs {
+.form__inputs {
   margin: 0;
   padding: 0;
   margin-inline-start: 0;
@@ -7,13 +7,13 @@
   padding-block-end: 0;
   padding-inline-start: 0;
   padding-inline-end: 0;
-  margin-bottom: 48px;
+  margin-bottom: 7px;
   border: 0;
   width: 100%;
 }
-
+  
 @media screen and (max-width: 320px) {
-  .popup__form-inputs {
-    margin-bottom: 45px;
+  .form__inputs {
+    margin-bottom: 4px;
   }
-}
+} 

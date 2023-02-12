@@ -2,7 +2,7 @@ const profilePopup = document.querySelector('.popup_type_edit-profile');
 const profileElement = document.querySelector('.profile')
 const editProfileBtn = profileElement.querySelector('.profile__edit-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
-const profileForm = profilePopup.querySelector('.popup__form');
+const profileForm = profilePopup.querySelector('.form');
 const profileNameInput = profileForm.querySelector('[name="profileName"]');
 const profileJobInput = profileForm.querySelector('[name="profileJob"]');
 const profileNameElement = profileElement.querySelector('.profile__name');
@@ -11,7 +11,7 @@ const profileJobElement = profileElement.querySelector('.profile__job');
 const placePopup = document.querySelector('.popup_type_add-place');
 const placesElement = document.querySelector('.places');
 const cardTemplateElement = document.querySelector('#place-template').content.querySelector('.place');
-const placeForm = placePopup.querySelector('.popup__form');
+const placeForm = placePopup.querySelector('.form');
 const placeNameInput = placeForm.querySelector('[name ="placeName"]');
 const placeImageSrcInput = placeForm.querySelector('[name ="placeImageSrc"]');
 const imagePopup = document.querySelector('.popup_type_show-image');
@@ -111,7 +111,18 @@ editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
   profileJobInput.value = profileJobElement.textContent;
+  enableValidation({
+    formSelector: '.form_type_edit-profile', 
+    fieldsetSelector: '.form__inputs', 
+    submitButtonSelector: '.form__save-btn', 
+    inputSelector: '.form__input', 
+    inactiveButtonClass: 'form__save-btn_inactive', 
+    inputErrorClass: 'form__input_type_error', 
+    errorActiveClass: 'form__input-error_active'
+  });
 });
+
+
 
 /*сохранение имени и работы*/ 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
@@ -119,6 +130,15 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 /*открытие всплывающего окна для добавления нового места*/
 addPlaceBtn.addEventListener('click', function () {
   openPopupWindow(placePopup);
+  enableValidation({
+    formSelector: '.form_type_add-place', 
+    fieldsetSelector: '.form__inputs', 
+    submitButtonSelector: '.form__save-btn', 
+    inputSelector: '.form__input', 
+    inactiveButtonClass: 'form__save-btn_inactive', 
+    inputErrorClass: 'form__input_type_error', 
+    errorActiveClass: 'form__input-error_active'
+  });
 });
 
 /*закрытие всплывающих окон*/

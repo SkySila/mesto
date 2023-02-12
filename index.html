@@ -31,26 +31,30 @@
     </footer>
     <section class="popup popup_type_edit-profile">
       <div class="popup__container">
-        <form class="popup__form" name="profileForm" novalidate>
-          <h3 class="popup__form-title">Редактировать профиль</h3>
-          <fieldset class="popup__form-inputs">
-            <input type="text" placeholder = "Введите имя" name="profileName" class="popup__form-input" required minlength="2" maxlength="40">
-            <input type="text" placeholder = "Введите работу" name="profileJob" class="popup__form-input" required minlength="2" maxlength="200">
+        <form class="form form_type_edit-profile popup__form" name="profileForm" novalidate>
+          <h3 class="form__title">Редактировать профиль</h3>
+          <fieldset class="form__inputs">
+            <input id="profile-name-input" type="text" placeholder = "Введите имя" name="profileName" class="form__input" required minlength="2" maxlength="40">
+            <span class="profile-name-input-error form__input-error"></span>
+            <input id="job-input" type="text" placeholder = "Введите работу" name="profileJob" class="form__input" required minlength="2" maxlength="200">
+            <span class="job-input-error form__input-error"></span>
           </fieldset>
-          <button type="submit" class="popup__save-btn" aria-label="Сохранить">Сохранить</button>
+          <button type="submit" class="form__save-btn" aria-label="Сохранить">Сохранить</button>
         </form>
         <button type="button" class="popup__close-btn" aria-label="Закрыть"></button>
       </div>
     </section>
     <section class="popup popup_type_add-place">
       <div class="popup__container">
-        <form class="popup__form" name="placeForm" novalidate>
-          <h3 class="popup__form-title">Новое место</h3>
-          <fieldset class="popup__form-inputs">
-            <input type="text" placeholder = "Название" name="placeName" class="popup__form-input" required minlength="2" maxlength="30">
-            <input type="url" placeholder = "Ссылка на картинку" name="placeImageSrc" class="popup__form-input" required>
+        <form class="form form_type_add-place popup__form" name="placeForm" novalidate>
+          <h3 class="form__title">Новое место</h3>
+          <fieldset class="form__inputs">
+            <input id="place-name-input" type="text" placeholder = "Название" name="placeName" class="form__input" required minlength="2" maxlength="30">
+            <span class="place-name-input-error form__input-error"></span>
+            <input id="place-url-input" type="url" placeholder = "Ссылка на картинку" name="placeImageSrc" class="form__input" required>
+            <span class="place-url-input-error form__input-error"></span>
           </fieldset>
-          <button type="submit" class="popup__save-btn" aria-label="Создать">Создать</button>
+          <button type="submit" class="form__save-btn" aria-label="Создать">Создать</button>
         </form>
         <button type="button" class="popup__close-btn" aria-label="Закрыть"></button>
       </div>
@@ -72,7 +76,7 @@
         </div>
       </article>
     </template>
-  <script src="./scripts/index.js"></script>
   <script src="./scripts/validate.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
