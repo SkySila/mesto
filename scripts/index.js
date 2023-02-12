@@ -1,3 +1,4 @@
+const popupElementList = Array.from(document.querySelectorAll('.popup'));
 const profilePopup = document.querySelector('.popup_type_edit-profile');
 const profileElement = document.querySelector('.profile')
 const editProfileBtn = profileElement.querySelector('.profile__edit-btn');
@@ -122,8 +123,6 @@ editProfileBtn.addEventListener ('click', function () {
   });
 });
 
-
-
 /*сохранение имени и работы*/ 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
@@ -141,7 +140,10 @@ addPlaceBtn.addEventListener('click', function () {
   });
 });
 
-/*закрытие всплывающих окон*/
+/*добавление нового места*/
+placeForm.addEventListener('submit', handlePlaceFormSubmit);
+
+/*закрытие всплывающих окон по кнопке*/
 closeButtons.forEach(function(button) {
   const closestPopup = button.closest('.popup');
   button.addEventListener('click', function(){
@@ -149,8 +151,14 @@ closeButtons.forEach(function(button) {
   });
 });
 
-/*добавление нового места*/
-placeForm.addEventListener('submit', handlePlaceFormSubmit);
+/*закрытие всплывающих окон кликом на оверлей*/
+popupElementList.forEach((popupElement) => {
+  popupElement.addEventListener('click', function (event) {
+    if(event.target === event.currentTarget) {
+      closePopupWindow(popupElement);
+    }
+  });
+});
 
 
 
