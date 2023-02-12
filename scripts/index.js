@@ -160,6 +160,13 @@ popupElementList.forEach((popupElement) => {
   });
 });
 
+document.addEventListener('keydown', function (event) {
+  const openedPopup = document.querySelector('.popup_opened');
+  if(event.key === "Escape" && Boolean(openedPopup)){
+    closePopupWindow(openedPopup);
+  }
+});
+
 
 
 
