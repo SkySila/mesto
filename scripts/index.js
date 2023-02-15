@@ -137,6 +137,8 @@ editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
   profileJobInput.value = profileJobElement.textContent;
+  checkInputValidity(profileForm, profileNameInput, 'form__input_type_error', 'form__input-error_active');
+  checkInputValidity(profileForm, profileJobInput, 'form__input_type_error', 'form__input-error_active');
   toggleButtonState(saveProfileBtn, profileInputList, 'form__save-btn_inactive');
 });
 
