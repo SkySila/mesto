@@ -46,6 +46,13 @@ const initialPlaces = [
   }
 ];
 
+function handleEscapeKey (event) {
+  if(event.key === "Escape"){
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopupWindow(openedPopup);
+  }
+}
+
 function openPopupWindow (popupItem) {
   popupItem.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscapeKey);
@@ -107,29 +114,25 @@ function handlePlaceFormSubmit (event) {
   closePopupWindow(placePopup);
 }
 
-function handleEscapeKey (event) {
-  const openedPopup = document.querySelector('.popup_opened');
-  if(event.key === "Escape" && Boolean(openedPopup)){
-    closePopupWindow(openedPopup);
-  }
-}
-
+/*добавление начальных карточек по умолчанию*/
 addInitialPlaces();
+
+/*включение валидации форм*/
+enableValidation({
+  formSelector: '.form', 
+  fieldsetSelector: '.form__inputs', 
+  submitButtonSelector: '.form__save-btn', 
+  inputSelector: '.form__input', 
+  inactiveButtonClass: 'form__save-btn_inactive', 
+  inputErrorClass: 'form__input_type_error', 
+  errorActiveClass: 'form__input-error_active'
+});
 
 /*открытие всплывающего окна редактирования*/
 editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
   profileJobInput.value = profileJobElement.textContent;
-  enableValidation({
-    formSelector: '.form_type_edit-profile', 
-    fieldsetSelector: '.form__inputs', 
-    submitButtonSelector: '.form__save-btn', 
-    inputSelector: '.form__input', 
-    inactiveButtonClass: 'form__save-btn_inactive', 
-    inputErrorClass: 'form__input_type_error', 
-    errorActiveClass: 'form__input-error_active'
-  });
 });
 
 /*сохранение имени и работы*/ 
@@ -138,15 +141,6 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 /*открытие всплывающего окна для добавления нового места*/
 addPlaceBtn.addEventListener('click', function () {
   openPopupWindow(placePopup);
-  enableValidation({
-    formSelector: '.form_type_add-place', 
-    fieldsetSelector: '.form__inputs', 
-    submitButtonSelector: '.form__save-btn', 
-    inputSelector: '.form__input', 
-    inactiveButtonClass: 'form__save-btn_inactive', 
-    inputErrorClass: 'form__input_type_error', 
-    errorActiveClass: 'form__input-error_active'
-  });
 });
 
 /*добавление нового места*/
