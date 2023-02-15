@@ -48,10 +48,12 @@ const initialPlaces = [
 
 function openPopupWindow (popupItem) {
   popupItem.classList.add('popup_opened');
+  document.addEventListener('keydown', handleEscapeKey);
 }
 
 function closePopupWindow (popupItem) {
   popupItem.classList.remove('popup_opened');
+  document.removeEventListener('keydown', handleEscapeKey);
 }
 
 function handleProfileFormSubmit (evt) {
@@ -98,11 +100,18 @@ function addNewPlace(name, link) {
   placesElement.prepend(newPlace);
 }
 
-function handlePlaceFormSubmit (evt) {
-  evt.preventDefault();  
+function handlePlaceFormSubmit (event) {
+  event.preventDefault();  
   addNewPlace(placeNameInput.value, placeImageSrcInput.value);
-  evt.target.reset();
+  event.target.reset();
   closePopupWindow(placePopup);
+}
+
+function handleEscapeKey (event) {
+  const openedPopup = document.querySelector('.popup_opened');
+  if(event.key === "Escape" && Boolean(openedPopup)){
+    closePopupWindow(openedPopup);
+  }
 }
 
 addInitialPlaces();
@@ -158,13 +167,6 @@ popupElementList.forEach((popupElement) => {
       closePopupWindow(popupElement);
     }
   });
-});
-
-document.addEventListener('keydown', function (event) {
-  const openedPopup = document.querySelector('.popup_opened');
-  if(event.key === "Escape" && Boolean(openedPopup)){
-    closePopupWindow(openedPopup);
-  }
 });
 
 
