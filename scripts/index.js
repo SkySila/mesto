@@ -4,20 +4,24 @@ const profileElement = document.querySelector('.profile')
 const editProfileBtn = profileElement.querySelector('.profile__edit-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
 const profileForm = profilePopup.querySelector('.form');
+const profileInputList = Array.from(profileForm.querySelectorAll('.form__input'));
 const profileNameInput = profileForm.querySelector('[name="profileName"]');
 const profileJobInput = profileForm.querySelector('[name="profileJob"]');
 const profileNameElement = profileElement.querySelector('.profile__name');
 const profileJobElement = profileElement.querySelector('.profile__job');
+const saveProfileBtn = profileForm.querySelector('.form__save-btn');
 
 const placePopup = document.querySelector('.popup_type_add-place');
 const placesElement = document.querySelector('.places');
 const cardTemplateElement = document.querySelector('#place-template').content.querySelector('.place');
 const placeForm = placePopup.querySelector('.form');
+const placeInputList = Array.from(placeForm.querySelectorAll('.form__input'));
 const placeNameInput = placeForm.querySelector('[name ="placeName"]');
 const placeImageSrcInput = placeForm.querySelector('[name ="placeImageSrc"]');
 const imagePopup = document.querySelector('.popup_type_show-image');
 const popupCardImage = imagePopup.querySelector('.popup__image');
 const popupCardImageName = imagePopup.querySelector('.popup__image-name');
+const savePlaceBtn = placeForm.querySelector('.form__save-btn');
 const closeButtons = document.querySelectorAll('.popup__close-btn');
 const initialPlaces = [
   {
@@ -133,6 +137,7 @@ editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
   profileJobInput.value = profileJobElement.textContent;
+  toggleButtonState(saveProfileBtn, profileInputList, 'form__save-btn_inactive');
 });
 
 /*сохранение имени и работы*/ 
@@ -141,6 +146,7 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 /*открытие всплывающего окна для добавления нового места*/
 addPlaceBtn.addEventListener('click', function () {
   openPopupWindow(placePopup);
+  toggleButtonState(savePlaceBtn, placeInputList, 'form__save-btn_inactive');
 });
 
 /*добавление нового места*/
