@@ -132,13 +132,15 @@ enableValidation({
   errorActiveClass: 'form__input-error_active'
 });
 
+const eventInputJs = new Event('input');
+
 /*открытие всплывающего окна редактирования*/
 editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
+  profileNameInput.dispatchEvent(eventInputJs);
   profileJobInput.value = profileJobElement.textContent;
-  checkInputValidity(profileForm, profileNameInput, 'form__input_type_error', 'form__input-error_active');
-  checkInputValidity(profileForm, profileJobInput, 'form__input_type_error', 'form__input-error_active');
+  profileJobInput.dispatchEvent(eventInputJs);
   toggleButtonState(saveProfileBtn, profileInputList, 'form__save-btn_inactive');
 });
 

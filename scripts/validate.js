@@ -39,7 +39,7 @@ const toggleButtonState = (buttonElement, inputList, inactiveButtonClass) => {
 
 const setEventListeners = (formElement, buttonElement, inputSelector, inactiveButtonClass, inputErrorClass, errorActiveClass) => {
   const inputList = Array.from(formElement.querySelectorAll(`${inputSelector}`));
-
+  
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function() {
       checkInputValidity(formElement, inputElement, inputErrorClass, errorActiveClass);
