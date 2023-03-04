@@ -48,7 +48,7 @@ const setEventListeners = (formElement, buttonElement, inputSelector, inactiveBu
   });
 };
 
-const enableValidation = ({formSelector, fieldsetSelector, submitButtonSelector, inputSelector, inactiveButtonClass, inputErrorClass, errorActiveClass}) => {
+export const enableValidation = ({formSelector, fieldsetSelector, submitButtonSelector, inputSelector, inactiveButtonClass, inputErrorClass, errorActiveClass}) => {
   const formList = Array.from(document.querySelectorAll(`${formSelector}`));
   formList.forEach((form) => {
     const buttonElement = form.querySelector(`${submitButtonSelector}`);

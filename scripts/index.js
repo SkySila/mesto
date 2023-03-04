@@ -23,6 +23,7 @@ const popupCardImage = imagePopup.querySelector('.popup__image');
 const popupCardImageName = imagePopup.querySelector('.popup__image-name');
 const savePlaceBtn = placeForm.querySelector('.form__save-btn');
 const closeButtons = document.querySelectorAll('.popup__close-btn');
+const eventInputJs = new Event('input');
 const initialPlaces = [
   {
     name: 'Эль-Капитан',
@@ -75,40 +76,18 @@ function handleProfileFormSubmit (evt) {
   closePopupWindow(profilePopup);
 }
 
-function copyPlaceNameAndLink (placeName, placeLink) {
-  const newPlaceDeepCopy = cardTemplateElement.cloneNode(true);
-  const newPlaceImage = newPlaceDeepCopy.querySelector('.place__image');
-  
-  newPlaceDeepCopy.querySelector('.place__name').textContent = placeName;
-  newPlaceImage.alt = placeName;
-  newPlaceImage.src = placeLink;
-
-  newPlaceDeepCopy.querySelector('.place__like').addEventListener('click', function (event) {
-    event.target.classList.toggle('place__like_active');
-  });
-  newPlaceDeepCopy.querySelector('.place__delete-btn').addEventListener('click', function (event) {
-    event.target.parentElement.remove();
-  });
-  newPlaceImage.addEventListener('click', function () {
-    popupCardImage.src = placeLink;
-    popupCardImage.alt = placeName;
-    popupCardImageName.textContent = placeName;
-    openPopupWindow(imagePopup);
-  });
-
-  return newPlaceDeepCopy;
-}
-
 function addInitialPlaces () {
   initialPlaces.forEach((item) => {
-    const newPlace = copyPlaceNameAndLink(item.name, item.link);
-    placesElement.append(newPlace);
+    const newPlace = new Card(item.name, item.link, item.name, '#place-template');
+    const cardElement = newPlace.createCard();
+    placesElement.append(cardElement);
   });
 }
 
 function addNewPlace(name, link) {
-  const newPlace = copyPlaceNameAndLink(name, link);
-  placesElement.prepend(newPlace);
+  const element = new Card(name, link, name, '#place-template');
+  const cardElement = element.createCard();
+  placesElement.prepend(cardElement);
 }
 
 function handlePlaceFormSubmit (event) {
@@ -117,6 +96,9 @@ function handlePlaceFormSubmit (event) {
   event.target.reset();
   closePopupWindow(placePopup);
 }
+//export { openPopupWindow, handleEscapeKey, imagePopup, popupCardImage, popupCardImageName };
+import {Card} from './Card.js';
+import { enableValidation } from './validate.js';
 
 /*добавление начальных карточек по умолчанию*/
 addInitialPlaces();
@@ -131,8 +113,6 @@ enableValidation({
   inputErrorClass: 'form__input_type_error', 
   errorActiveClass: 'form__input-error_active'
 });
-
-const eventInputJs = new Event('input');
 
 /*открытие всплывающего окна редактирования*/
 editProfileBtn.addEventListener ('click', function () {
