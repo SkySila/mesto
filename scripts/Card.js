@@ -1,26 +1,13 @@
-//import { openPopupWindow, handleEscapeKey, imagePopup, popupCardImage, popupCardImageName} from './index.js';
-const imagePopup = document.querySelector('.popup_type_show-image');
-const popupCardImage = imagePopup.querySelector('.popup__image');
-const popupCardImageName = imagePopup.querySelector('.popup__image-name');
-
-function handleEscapeKey (event) {
-    if(event.key === "Escape"){
-      const openedPopup = document.querySelector('.popup_opened');
-      closePopupWindow(openedPopup);
-    }
-}
-
-function openPopupWindow (popupItem) {
-    popupItem.classList.add('popup_opened');
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
 export class Card {
-  constructor (name, imageSource, imageAlt, templateSelector) {
+  constructor (name, imageSource, imageAlt, templateSelector, openPopupWindow, imagePopup, popupCardImage, popupCardImageName) {
     this._name = name;
     this._imageSource = imageSource;
     this._imageAlt = imageAlt;
     this._templateSelector = templateSelector;
+    this._openPopupWindow = openPopupWindow;
+    this._imagePopup = imagePopup;
+    this._popupCardImage = popupCardImage;
+    this._popupCardImageName = popupCardImageName;
   }
   
   _getTemplate () {
@@ -53,10 +40,10 @@ export class Card {
     });
 
     this._element.querySelector('.place__image').addEventListener('click', () => {
-      popupCardImage.src = this._imageSource;
-      popupCardImage.alt = this._imageAlt;
-      popupCardImageName.textContent = this._name;
-      openPopupWindow(imagePopup);
+      this._popupCardImage.src = this._imageSource;
+      this._popupCardImage.alt = this._imageAlt;
+      this._popupCardImageName.textContent = this._name;
+      this._openPopupWindow(this._imagePopup);
     });
   }
 }

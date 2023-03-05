@@ -28,6 +28,9 @@ const validationSettings = {
 };
 const profileFormValidator = new FormValidator(validationSettings, profileForm);
 const placeFormValidator = new FormValidator(validationSettings, placeForm);
+const imagePopup = document.querySelector('.popup_type_show-image');
+const popupCardImage = imagePopup.querySelector('.popup__image');
+const popupCardImageName = imagePopup.querySelector('.popup__image-name');
 const initialPlaces = [
   {
     name: 'Эль-Капитан',
@@ -82,14 +85,14 @@ function handleProfileFormSubmit (evt) {
 
 function addInitialPlaces () {
   initialPlaces.forEach((item) => {
-    const newPlace = new Card(item.name, item.link, item.name, '#place-template');
+    const newPlace = new Card(item.name, item.link, item.name, '#place-template', openPopupWindow, imagePopup, popupCardImage, popupCardImageName);
     const cardElement = newPlace.createCard();
     placesElement.append(cardElement);
   });
 }
 
 function addNewPlace(name, link) {
-  const element = new Card(name, link, name, '#place-template');
+  const element = new Card(name, link, name, '#place-template', openPopupWindow, imagePopup, popupCardImage, popupCardImageName);
   const cardElement = element.createCard();
   placesElement.prepend(cardElement);
 }
