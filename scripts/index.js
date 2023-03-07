@@ -6,18 +6,17 @@ const profilePopup = document.querySelector('.popup_type_edit-profile');
 const profileElement = document.querySelector('.profile')
 const editProfileBtn = profileElement.querySelector('.profile__edit-btn');
 const addPlaceBtn = profileElement.querySelector('.profile__add-btn');
-const profileForm = profilePopup.querySelector('.form');
+const profileForm = document.forms['profileForm'];
 const profileNameInput = profileForm.querySelector('[name="profileName"]');
 const profileJobInput = profileForm.querySelector('[name="profileJob"]');
 const profileNameElement = profileElement.querySelector('.profile__name');
 const profileJobElement = profileElement.querySelector('.profile__job');
 const placePopup = document.querySelector('.popup_type_add-place');
 const placesElement = document.querySelector('.places');
-const placeForm = placePopup.querySelector('.form');
+const placeForm = document.forms['placeForm'];
 const placeNameInput = placeForm.querySelector('[name ="placeName"]');
 const placeImageSrcInput = placeForm.querySelector('[name ="placeImageSrc"]');
 const closeButtons = document.querySelectorAll('.popup__close-btn');
-const eventInputJs = new Event('input');
 const validationSettings = {
   fieldsetSelector: '.form__inputs', 
   submitButtonSelector: '.form__save-btn', 
@@ -83,18 +82,30 @@ function handleProfileFormSubmit (evt) {
   closePopupWindow(profilePopup);
 }
 
+function handleCardClick (name, link) {
+  popupCardImage.src = link;
+  popupCardImage.alt = name;
+  popupCardImageName.textContent = name;
+  openPopupWindow(imagePopup);
+}
+
+function makeNewCard(name, link) {
+  const element = new Card(name, link, name, '#place-template', handleCardClick);
+  const cardElement = element.createCard();
+
+  return cardElement;
+}
+
 function addInitialPlaces () {
   initialPlaces.forEach((item) => {
-    const newPlace = new Card(item.name, item.link, item.name, '#place-template', openPopupWindow, imagePopup, popupCardImage, popupCardImageName);
-    const cardElement = newPlace.createCard();
-    placesElement.append(cardElement);
+    const newCard = makeNewCard(item.name, item.link);
+    placesElement.append(newCard);
   });
 }
 
 function addNewPlace(name, link) {
-  const element = new Card(name, link, name, '#place-template', openPopupWindow, imagePopup, popupCardImage, popupCardImageName);
-  const cardElement = element.createCard();
-  placesElement.prepend(cardElement);
+  const newCard = makeNewCard(name, link);
+  placesElement.prepend(newCard);
 }
 
 function handlePlaceFormSubmit (event) {
@@ -115,9 +126,8 @@ placeFormValidator.enableValidation();
 editProfileBtn.addEventListener ('click', function () {
   openPopupWindow(profilePopup);
   profileNameInput.value = profileNameElement.textContent;
-  profileNameInput.dispatchEvent(eventInputJs);
   profileJobInput.value = profileJobElement.textContent;
-  profileJobInput.dispatchEvent(eventInputJs);
+  profileFormValidator.resetValidation();
 });
 
 /*сохранение имени и работы*/ 
@@ -126,6 +136,7 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 /*открытие всплывающего окна для добавления нового места*/
 addPlaceBtn.addEventListener('click', function () {
   openPopupWindow(placePopup);
+  placeFormValidator.resetValidation();
 });
 
 /*добавление нового места*/
